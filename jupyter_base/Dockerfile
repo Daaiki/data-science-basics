@@ -7,8 +7,12 @@ USER root
 
 # Install jupyter notebook
 RUN apt-get update \
- && apt-get -y upgrade \
- && apt-get -y --no-install-recommends install jupyter-notebook
+  && apt-get -y upgrade \
+  && apt-get -y --no-install-recommends install jupyter-notebook \
+  && apt-get -y --no-install-recommends install python3-pip 
+
+RUN pip3 install numpy
+RUN pip3 install scipy
 
 # Jupyter notebook hashed password
 ## $ python3
