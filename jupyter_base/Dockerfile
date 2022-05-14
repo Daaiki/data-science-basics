@@ -11,8 +11,12 @@ RUN apt-get update \
   && apt-get -y --no-install-recommends install jupyter-notebook \
   && apt-get -y --no-install-recommends install python3-pip 
 
-RUN pip3 install numpy
-RUN pip3 install scipy
+# Install libraries
+RUN pip3 install numpy \
+  && pip3 install scipy \
+  && pip3 install pandas \
+  && pip3 install matplotlib \
+  && pip3 install seaborn
 
 # Jupyter notebook hashed password
 ## $ python3
